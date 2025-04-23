@@ -26,4 +26,5 @@ abstract class Personaje {
     public int hashCode() {
         return Objects.hash(nombre, nivel, salud);
     }
+    //comentario
 }
