@@ -58,3 +58,65 @@ class magico extends Personaje {
         System.out.println("¡Atacando con magia!");
     }
 }
+
+class guerrero extends fisico{
+
+    private int fuerza;
+    private int armadura;
+    private int escudo;
+
+    public guerrero(String nombre, int nivel, int salud, int fuerza, int armadura, int escudo) {
+        super(nombre, nivel, salud);
+        this.fuerza = fuerza;
+        this.armadura = armadura;
+        this.escudo = escudo;
+    }
+}
+
+class mago extends magico{
+
+    private int mana;
+    private int sabiduria;
+
+    public mago(String nombre, int nivel, int salud, int mana, int sabiduria) {
+        super(nombre, nivel, salud);
+        this.mana = mana;
+        this.sabiduria = sabiduria;
+    }
+}
+
+class arquero extends fisico{
+
+    private int agilidad;
+    private int numflechas;
+
+    public arquero(String nombre, int nivel, int salud, int agilidad, int numflechas) {
+        super(nombre, nivel, salud);
+        this.agilidad = agilidad;
+        this.numflechas = numflechas;
+    }
+}
+
+class hechicero extends magico{
+
+    private int mana;
+    private int concentracion;
+
+    public hechicero(String nombre, int nivel, int salud, int mana, int concentracion) {
+        super(nombre, nivel, salud);
+        this.mana = mana;
+        this.concentracion = concentracion;
+    }
+}
+
+class asesino extends fisico{
+
+    private int sigilo;
+    private int critico;
+
+    public asesino(String nombre, int nivel, int salud, int sigilo, int critico) {
+        super(nombre, nivel, salud);
+        this.sigilo = sigilo;
+        this.critico = critico;
+    }
+}
