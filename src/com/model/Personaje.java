@@ -3,7 +3,9 @@ abstract class Personaje {
     protected int nivel;
     protected int salud;
 
-    abstract void atacar();
+    abstract void atacar() {
+        System.out.println("El personja está atacando");
+    }
 
     @Override
     public String toString() {
