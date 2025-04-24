@@ -3,9 +3,7 @@ abstract class Personaje {
     protected int nivel;
     protected int salud;
 
-    abstract void atacar() {
-        System.out.println("El personja está atacando");
-    }
+    abstract void atacar();
 
     @Override
     public String toString() {
@@ -28,5 +26,19 @@ abstract class Personaje {
     public int hashCode() {
         return Objects.hash(nombre, nivel, salud);
     }
-    //comentario
+
+}
+
+class fisico extends Personaje {
+    @Override
+    void atacar() {
+        System.out.println("¡Atacando con fuerza física!");
+    }
+}
+
+class magico extends Personaje {
+    @Override
+    void atacar() {
+        System.out.println("¡Atacando con magia!");
+    }
 }
