@@ -3,6 +3,12 @@ abstract class Personaje {
     protected int nivel;
     protected int salud;
 
+    public Personaje(String nombre, int nivel, int salud) {
+        this.nombre = nombre;
+        this.nivel = nivel;
+        this.salud = salud;
+    }
+
     abstract void atacar();
 
     @Override
@@ -30,6 +36,11 @@ abstract class Personaje {
 }
 
 class fisico extends Personaje {
+
+    public fisico(String nombre, int nivel, int salud) {
+        super(nombre, nivel, salud);
+    }
+    
     @Override
     void atacar() {
         System.out.println("¡Atacando con fuerza física!");
@@ -37,6 +48,11 @@ class fisico extends Personaje {
 }
 
 class magico extends Personaje {
+
+    public magico(String nombre, int nivel, int salud) {
+        super(nombre, nivel, salud);
+    }
+
     @Override
     void atacar() {
         System.out.println("¡Atacando con magia!");
