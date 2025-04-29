@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 abstract class Personaje {
     protected String nombre;
     protected int nivel;
@@ -32,6 +34,7 @@ abstract class Personaje {
     public int hashCode() {
         return Objects.hash(nombre, nivel, salud);
     }
+
 
 }
 
@@ -93,12 +96,13 @@ class guerrero extends fisico implements defensivo{
     }
 
     @Override
-    void defender() {
+    public void defender() {
         System.out.println("¡El Guerrero se está defendiendo con escudo!");
     }
 }
 
-class mago extends magico implements hechizo{
+@SuppressWarnings("unused")
+class mago extends magico implements magia{
 
     private int mana;
     private int sabiduria;
@@ -110,7 +114,7 @@ class mago extends magico implements hechizo{
     }
 
     @Override
-    void lanzarHechizo() {
+    public void lanzarHechizo() {
         System.out.println("¡El ago está lanzando un hechizo poderoso!");
     }
 
@@ -139,7 +143,7 @@ class arquero extends fisico implements movimiento{
     }
 
     @Override
-    void moverse() {
+    public void moverse() {
         System.out.println("¡El arquero se está moviendo sigilosamente!");
     }
 }
@@ -160,7 +164,7 @@ class hechicero extends magico implements defensivo{
     }
 
     @Override
-    void defender() {
+    public void defender() {
         System.out.println("¡El hechicero se está defendiendo con magia!");
     }
 }
@@ -185,7 +189,7 @@ class asesino extends fisico implements sigilidad{
     }
 
     @Override
-    void sigilo() {
+    public void sigilo() {
         System.out.println("¡El asesino se mueve en silencio!");
     }
 }
