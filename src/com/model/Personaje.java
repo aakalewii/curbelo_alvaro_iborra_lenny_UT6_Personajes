@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 abstract class Personaje {
     protected String nombre;
     protected int nivel;
@@ -35,9 +37,9 @@ abstract class Personaje {
 
 }
 
-class fisico extends Personaje {
+class Fisico extends Personaje {
 
-    public fisico(String nombre, int nivel, int salud) {
+    public Fisico(String nombre, int nivel, int salud) {
         super(nombre, nivel, salud);
     }
     
@@ -47,9 +49,9 @@ class fisico extends Personaje {
     }
 }
 
-class magico extends Personaje {
+class Magico extends Personaje {
 
-    public magico(String nombre, int nivel, int salud) {
+    public Magico(String nombre, int nivel, int salud) {
         super(nombre, nivel, salud);
     }
 
@@ -75,13 +77,13 @@ interface sigilidad {
     void sigilo();
 }
 
-class guerrero extends fisico implements defensivo{
+class Guerrero extends Fisico implements defensivo{
 
     private int fuerza;
     private int armadura;
     private int escudo;
 
-    public guerrero(String nombre, int nivel, int salud, int fuerza, int armadura, int escudo) {
+    public Guerrero(String nombre, int nivel, int salud, int fuerza, int armadura, int escudo) {
         super(nombre, nivel, salud);
         this.fuerza = fuerza;
         this.armadura = armadura;
@@ -93,24 +95,24 @@ class guerrero extends fisico implements defensivo{
     }
 
     @Override
-    void defender() {
+    public void defender() {
         System.out.println("¡El Guerrero se está defendiendo con escudo!");
     }
 }
 
-class mago extends magico implements hechizo{
+class Mago extends Magico implements magia{
 
     private int mana;
     private int sabiduria;
 
-    public mago(String nombre, int nivel, int salud, int mana, int sabiduria) {
+    public Mago(String nombre, int nivel, int salud, int mana, int sabiduria) {
         super(nombre, nivel, salud);
         this.mana = mana;
         this.sabiduria = sabiduria;
     }
 
     @Override
-    void lanzarHechizo() {
+    public void lanzarHechizo() {
         System.out.println("¡El ago está lanzando un hechizo poderoso!");
     }
 
@@ -119,12 +121,12 @@ class mago extends magico implements hechizo{
     }
 }
 
-class arquero extends fisico implements movimiento{
+class Arquero extends Fisico implements movimiento{
 
     private int agilidad;
     private int numflechas;
 
-    public arquero(String nombre, int nivel, int salud, int agilidad, int numflechas) {
+    public Arquero(String nombre, int nivel, int salud, int agilidad, int numflechas) {
         super(nombre, nivel, salud);
         this.agilidad = agilidad;
         this.numflechas = numflechas;
@@ -139,17 +141,17 @@ class arquero extends fisico implements movimiento{
     }
 
     @Override
-    void moverse() {
+    public void moverse() {
         System.out.println("¡El arquero se está moviendo sigilosamente!");
     }
 }
 
-class hechicero extends magico implements defensivo{
+class Hechicero extends Magico implements defensivo{
 
     private int mana;
     private int concentracion;
 
-    public hechicero(String nombre, int nivel, int salud, int mana, int concentracion) {
+    public Hechicero(String nombre, int nivel, int salud, int mana, int concentracion) {
         super(nombre, nivel, salud);
         this.mana = mana;
         this.concentracion = concentracion;
@@ -160,17 +162,17 @@ class hechicero extends magico implements defensivo{
     }
 
     @Override
-    void defender() {
+    public void defender() {
         System.out.println("¡El hechicero se está defendiendo con magia!");
     }
 }
 
-class asesino extends fisico implements sigilidad{
+class Asesino extends Fisico implements sigilidad{
 
     private int sigilo;
     private int critico;
 
-    public asesino(String nombre, int nivel, int salud, int sigilo, int critico) {
+    public Asesino(String nombre, int nivel, int salud, int sigilo, int critico) {
         super(nombre, nivel, salud);
         this.sigilo = sigilo;
         this.critico = critico;
@@ -185,7 +187,12 @@ class asesino extends fisico implements sigilidad{
     }
 
     @Override
-    void sigilo() {
+    public void sigilo() {
         System.out.println("¡El asesino se mueve en silencio!");
     }
 }
+
+
+
+
+//ikc
