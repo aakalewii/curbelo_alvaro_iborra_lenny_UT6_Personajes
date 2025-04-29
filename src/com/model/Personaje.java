@@ -196,3 +196,4 @@ class Asesino extends Fisico implements sigilidad{
 
 
 //ikc
+//uioq2bx
